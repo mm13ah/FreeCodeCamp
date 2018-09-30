@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Survey Form</title>
+  <style>
+  body {
+    background-color: lightblue;
+  }
+  #title, #description {
+    text-align: center;
+  }
+  #description {
+    width:50%;
+    margin: auto;
+    padding-bottom: 20px;
+  }
+  #survey-form {
+    background-color: white;
+    border-radius: 1%;
+    width: 80%;
+    text-align: center;
+    display: block;
+    margin: auto;
+    padding: 20px 0px;
+  }
+  .row {
+    margin-bottom: 10px;
+  }
+  .left {
+    display: inline-block;
+    text-align: right;
+    width: 38%;
+    padding-right: 10px;
+    vertical-align: middle;
+  }
+  .right {
+    display: inline-block;
+    text-align: left;
+    width: 38%;
+    vertical-align: middle;
+  }
+  </style>
+
+</head>
+<body>
+  <h1 id="title">Sign up for free money!</h1>
+  <p id="description">Do you like free money? We have so much money that we are
+    giving it away for free! Sign up for free money below.</p>
+    <form id="survey-form">
+      <div class="row">
+        <label class="left" id="name-label">*Name: </label>
+        <input class="right" type="text" name="name" id="name" placeholder="John Smith" required>
+      </div>
+      <div class="row">
+        <label class="left" id="email-label">*Email: </label>
+        <input class="right" type="email" name="email" id="email" placeholder="JSmith@email.com" required>
+      </div>
+      <div class="row">
+        <label class="left" id="number-label">*Age: </label>
+        <input class="right" type="number" name="age" id="number" min="16" max="100" placeholder="21" required>
+      </div>
+      <div class="row">
+        <label class="left">What is your current occupation?</label>
+        <select class="right" name="Occupation" id="dropdown">
+          <option value="student">Student</option>
+          <option value="employee">Employee</option>
+          <option value="unemployed">Unemployed</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="row">
+        <label class="left">Do you like free money?</label>
+        <div class="right">
+          <input type="radio" id="yes"
+          name="freemoney" value="yes" checked />
+          <label for="yes">Yes</label>
+          <input type="radio" id="no"
+          name="freemoney" value="no" />
+          <label for="no">No</label>
+          <input type="radio" id="notsure"
+          name="freemoney" value="notsure" />
+          <label for="notsure">Not sure</label>
+        </div>
+      </div>
+      <div class="row">
+        <label class="left">Which forms of payment do you use?<br>(Check all that apply)</label>
+        <div class="right">
+          <label for="cash">Cash</label>
+          <input type="checkbox" value="cash" name="cash">
+          <label for="card">Card</label>
+          <input type="checkbox" value="card" name="card">
+          <label for="cheque">Cheque</label>
+          <input type="checkbox" value="cheque" name="cheque">
+        </div>
+      </div>
+      <div class="row">
+        <label class="left" for="comments">Additional comments</label>
+        <textarea class="right" id="comments" placeholder="Enter comment here..." name="comment"></textarea>
+      </div>
+      <button id="submit" type="submit">Submit</button>
+    </form>
+
+  </body>
+  </html>
