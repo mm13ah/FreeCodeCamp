@@ -43,12 +43,17 @@ body {
   display: grid;
   width: 40%;
   margin: auto;
-  grid-template-areas: 'icon1 desc1 desc1 desc1'
+  grid-template-areas: 'promise-title promise-title promise-title promise-title'
+                        'icon1 desc1 desc1 desc1'
                         'icon2 desc2 desc2 desc2'
                         'icon3 desc3 desc3 desc3';
   align-items: center;
   grid-column-gap: 40px;
 }
+#promise-title {
+  text-align: center;
+}
+
 #icon1, #icon2, #icon3 {
   text-align: center;
   padding-top: 20px;
