@@ -1,173 +1,206 @@
 <!DOCTYPE html>
-<html>
-<head lang="en">
+<html lang="en">
+<head>
   <meta charset="utf-8">
-  <title>Python Documentation</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>JavaScript Reference</title>
+  <link rel="stylesheet" type="text/css" href="style.css" >
 </head>
 <body>
-  <nav id="navbar">
-    <div id="nav-container">
-      <header><h1 id="title">Python Documentation</h1></header>
+  <div id="nav-container">
+    <nav id="navbar">
+      <header id="title">JavaScript</header>
       <ul>
-        <li style="border-top: solid 1px grey;"><a class="nav-link" href="#Introduction">Introduction</a></li>
-        <li><a class="nav-link" href="#Hello_World">Hello World</a></li>
-        <li><a class="nav-link" href="#Variables">Variables</a></li>
-        <li><a class="nav-link" href="#Data_Types">Data Types</a></li>
-        <li><a class="nav-link" href="#If_Statements">If Statements</a></li>
-        <li><a class="nav-link" href="#">For Loops</a></li>
-        <li><a class="nav-link" href="#">While Loops</a></li>
-        <li><a class="nav-link" href="#">Functions</a></li>
-        <li><a class="nav-link" href="#">OOP</a></li>
-        <li><a class="nav-link" href="#">Further Reading</a></li>
+        <li><a href="#Introduction" class="nav-link">Introduction</a></li>
+        <li><a href="#Variables" class="nav-link">Variables</a></li>
+        <li><a href="#Scope" class="nav-link">Scope</a></li>
+        <li><a href="#Arrays" class="nav-link">Arrays</a></li>
+        <li><a href="#Conditionals" class="nav-link">Conditionals</a></li>
+        <li><a href="#Loops" class="nav-link">Loops</a></li>
+        <li><a href="#Functions" class="nav-link">Functions</a></li>
+        <li><a href="#Objects" class="nav-link">Objects</a></li>
+        <li><a href="#Classes" class="nav-link">Classes</a></li>
       </ul>
-    </div>
-  </nav>
-  <main id="main-doc">
+    </nav>
+  </div>
+  <main id="main-doc" style="margin-top: 20px;">
     <section class="main-section" id="Introduction">
-      <header class="section-title">Introduction</header>
-      <article>
-        <p>This tutorial is meant to introduce the main elements of the Python
-          programming language. Python is an extremely easy language to pick
-          up and its syntax is straightforward and readable. To follow
-          this tutorial you should be familiar with the basic concepts of programming.
-          Through the following tutorial, pieces of code with three less-than signs <code>>>></code> refer to
-          input to the Python interpreter. Pieces of code without <code>>>></code>
-          refer to output from the Python interpreter.
-        </p>
-      </article>
-    </section>
-    <section class="main-section" id="Hello_World">
-      <header class="section-title">Hello, World!</header>
-      <article>
-        <p>Python probably has a simpler <code>Hello World</code> program than any
-          other programming language!
-        </p>
-        <pre>
-          >>> print("Hello, World!")
-          Hello, World!
-        </pre>
-      </article>
+      <header>Introduction</header>
+      <p>This JavaScript tutorial is intended as a reminder for people
+        who are already familiar with JavaScript.</p>
+      <p>To start, here are some basic introductory commands/concepts:</p>
+      <p>
+        <ul>
+          <li>Printing data: <code>console.log()</code> function.</li>
+          <li>Comments: <code>//</code> (inline) and <code>/* */</code> (multiline)</li>
+          <li>Data types: string, number, boolean, null, undefined, symbol, object</li>
+          <li>Strings: single <code>''</code> or double <code>""</code> quotes</li>
+          <li>Numbers: without quotes</li>
+          <li>Arithmetic operators: <code>+</code> (addition), <code>-</code> (subtraction),
+            <code>*</code> (multiplication), <code>/</code> (division) , <code>%</code> (modulus)
+          </li>
+          <li>Objects: Can have properties (<code>.</code>) and methods (<code>.()</code>)
+        </ul>
+      </p>
     </section>
     <section class="main-section" id="Variables">
-      <header class="section-title">Variables</header>
-      <article>
-        <p>Variables are very simple to declare in Python. Unlike many
-        other programming languages, the data type of a variable does not need to
-        be specified when declaring variables. Here is an example of how to declare
-        a variable and then print it to the console:
-        </p>
-        <pre>
-          >>> x = 7
-          >>> print(x)
-          7
-        </pre>
-      </article>
+      <header>Variables</header>
+      <p>Variables are specified identifiers that hold data.</p>
+      <ul>
+        <li><code>var</code>: pre-ES6</li>
+        <li><code>let</code>: can be reassigned</li>
+        <li><code>const</code>: cannot be reassigned</li>
+        <li>Uninitialised variables have data type <code>undefined</code></li>
+        <li><code>+</code> operator is used to concatenate strings</code></li>
+        <li><code>typeof</code> returns data type as a string</li>
+        <li>Template literals: use backticks <code>``</code> to specify a string with variables specified using <code>${}</code></li>
+      </ul>
     </section>
-    <section class="main-section" id="Data_Types">
-      <header class="section-title">Data Types</header>
-      <article>
-        <p>In Python there are 5 main data types. These are:</p>
-        <ul>
-          <li>Numbers</li>
-          <li>Strings</li>
-          <li>Lists</li>
-          <li>Tuples</li>
-          <li>Dictionaries</li>
-        </ul>
-        <p>To check the type of a variable in Python, use the <code>type()</code>
-          function. See <a href="https://docs.python.org/3/library/datatypes.html" target="_blank">
-          special reference types</a> for other reference types.
-        </p>
-        <h2 class="subtitle">Numbers</h2>
-        <p>There are four types of numbers in Python, these are:</p>
-        <ul>
-          <li><code>int</code> - for integers</li>
-          <li><code>long</code> - for long integers
-          <li><code>float</code> - for floating point numbers
-          <li><code>complex</code> - for complex numbers
-        </ul>
-        <p>Operations that can be used on numbers include addition <code>+</code>,
-          subtraction <code>-</code>, multiplication <code>*</code>, division <code>/</code>
-          and modulo </code>%</code>. Note that division will always return a <code>float</code>.
-        <h2 class="subtitle">Strings</h2>
-        <p>Strings are created in Python by enclosing text in either single quotes
-          <code>''</code> or double <code>""</code> quotes. Strings can be concatenated
-          using the <code>+</code> symbol.
-        </p>
-        <h2 class="subtitle">Lists</h2>
-        <p>Lists in Python are similar to arrays in other languages. They are used
-          to store multiple pieces of data. Lists are declared using square brackets
-          <code>[]</code>, for example:
-        </p>
-        <pre>
-          >>> aList = [1,2,3,4,5]
-        </pre>
-        <p>Lists are ordered which means an individual element can be accessed based on
-          its position in the list. For example, to access the 2nd element in the list above
-          (remember that the element count starts at 0):
-        </p>
-        <pre>
-          >>> print(aList[1])
-          2
-        </pre>
-        <p>You can also update list elements
-          in a similar way:
-        </p>
-        <pre>
-          >>> aList[3] = 10
-          >>> print(aList[3])
-          10
-        </pre>
-        <p>The size of a list will change automatically as new elements are added/removed. See
-          <a href="https://www.w3schools.com/python/python_ref_list.asp" target="_blank">list methods</a> for methods that can be used on lists.
-        <h2 class="subtitle">Tuples</h2>
-          <p>Tuples are similar to lists but they are immutable and unchangeable. This means that elements
-            cannot be updated or deleted. It also means that the size of a tuple is fixed.
-            Tuples are declared using round brackets <code>()</code>.
-        <h2 class="subtitle">Dictionaries</h2>
-        <p>Dictionaries are unordered collections which store key : value pairs. They are
-          declared using curly brackets <code>{}</code>. Values are accessed by referencing
-          the key. This is best illustrated through an example:
-        </p>
-        <pre>
-          >>> myDict = {'Age' : 21, 'Job' : 'Student'}
-          >>> print(myDict['Age'])
-          21
-        </pre>
-        <p>The entries to the left of the colon are the keys, and the entries to the right
-          are the values.
-        </p>
-      </article>
+    <section class="main-section" id="Scope">
+      <header>Scope</header>
+      <p>Some variables are accessible/inaccessible from different parts of the program. This is known as <i>scope</i>.</p>
+      <ul>
+        <li>Blocks: statements that exist within curly braces <code>{}</code></li>
+        <li>Global scope: global variables are accessible from every part of the program</li>
+        <li>Local scope: local variables only exist/are accessible from within their block</li>
+        <li>Best practice: Scope variables tightly (locally) to ensure clean, organised and modular code</li>
+      </ul>
     </section>
-    <section class="main-section" id="If_Statements">
-      <header class="section-title">If statements</header>
-      <article>
-        <p><code>if</code> statements are pieces of code that execute only if a condition is true.
-        They can optionally be used in conjuction with <code>else if</code> (if a different condition
-        is true) or <code>else</code> (if the condition is not true) statements. An example of an <code>
-        if</code> statement in Python is:
-        </p>
-        <pre>
-          if (x < 10):
-            print('x is less than 10')
-          else if (x == 10):
-            print('x equals 10')
-          else:
-            print('x is greater than 10')
-        </pre>
-        <code>if</code> statements are commonly used with the logical operators <code>and</code>
-        and <code>or</code> (sometimes denoted as <code>&&</code> and <code>||</code> in other
-        languages).
-      </article>
+    <section class="main-section" id="Arrays">
+      <header>Arrays</header>
+      <p>Arrays are lists that store multiple pieces of data, declared using <code>[]</code></p>
+      <ul>
+        <li>Elements have a index (numbered position), starting at 0</li>
+        <li>Elements can be accessed/updated using <code>arrayName[index]</code></li>
+        <li><code>.length</code> property can be used to ge the number of items in an array</li>
+        <li>Mutating methods modify the array, non-mutating methods return a new array</li>
+        <li>Arrays can be nested (multi-dimensional), access elements by chaining brackets indices <code>[]</code></li>
+      </ul>
     </section>
-    <section class="main-section" id="For_Loops">
-      <header class="section-title">For Loops</header>
-      <article>
-
-      </article>
+    <section class="main-section" id="Conditionals">
+      <header>Conditionals</header>
+      <ul>
+        <li><code>if {}</code>: executes if a condition is true</li>
+        <li><code>if {} else {}</code>: execute different pieces of code based on a binary condition</li>
+        <li><code>else if {}</code>: used to add more conditions to an <code>if</code> statement</li>
+        <li>Comparison operators: <code><</code>, <code>></code>, <code><=</code>, <code>>=</code>, <code>===</code>, <code>!==</code></li>
+        <li>Logical operators: <code>||</code>, <code>&&</code></li>
+        <li>Bang operator: <code>!</code> switches truthiness/falsiness of a value (i.e. not)</li>
+        <li>Ternary operator: Shorthand for <code>if</code> statement
+          <pre><code>condition ? value_if_true : value_if_false</code></pre>
+        </li>
+        <li>Switch statement: Alternative to multiple <code>if {} else {}</code> statements
+          <pre><code>switch(variable) {
+  case x: //if variable === x
+    code block
+    break;
+  case y:
+    code block
+    break;
+  ...
+  default:
+    code block
+}</code></pre>
+        </li>
+      </ul>
+    </section>
+    <section class="main-section" id="Loops">
+      <header>Loops</header>
+      <p>Loops perform repetitive tasks.</p>
+      <ul>
+        <li>For loop with an iterator
+          <pre><code>for (let i=0; i < arr.length; i++) {}</code></pre>
+        </li>
+        <li>For in loop (for iterating through objects)
+          <pre><code>for (x in object) {}</code></pre>
+        </li>
+        <li>For of loop (for iterating through iterable objects, e.g. arrays or strings)
+          <pre><code>for (x of iterable_object) {}</code></pre>
+        </li>
+        <li>While loop: only executed if condition is true (checks condition first)
+          <pre><code>while (condition) {}</code></pre>
+        </li>
+        <li>Do while loop: executes at least once (executes then checks condition)
+          <pre><code>do {} while (condition)</code></pre>
+        </li>
+      </ul>
+    </section>
+    <section class="main-section" id="Functions">
+      <header>Functions</header>
+      <p>Functions are reusable blocks of code that group together statements to perform a specific task.</p>
+      <ul>
+        <li>Function declaration: <code>function function_name(parameters) {}</code></li>
+        <li>Default parameters: can assign a default value to a parameter if no argument is passed</li>
+        <li><code>return</code>: used to return a value from a function</li>
+        <li>Function expression: <code>const identifier = function(parameters) { ... return value; }</code></li>
+        <li>Arrow notation: <code>const identifier = (parameters) => { ...  return value; }</code></li>
+        <li>Single line arrow notation: <code>const identifier = (parameter) => parameter+2;</code></li>
+        <li>Can assign functions to variables, i.e. <code>const variable = identifier;</code></li>
+        <li>Functions are first class objects - they can have properties and methods</li>
+        <li>Functions can be passed as parameters into other functions</li>
+        <li>If a function accepts function and/or returns a function as a parameter, it is known as a <i>higher order function</i></li>
+        <li>Functions passed as parameters are known as <i>callback functions</i> - don't invoke the function (as that will give return value), just pass in function name</li>
+      </ul>
+    </section>
+    <section class="main-section" id="Objects">
+      <header>Objects</header>
+      <p>Objects store collections of key-value pairs. Each pair is a property (data) or method (function).</p>
+      <ul>
+        <li>Syntax:
+          <pre><code>const objectName = { property1: value1,
+                     property2: value2, ... };</code></pre>
+        </li>
+        <li>Access, add or edit a property using dot <code>.</code> or bracket <code>[]</code> notation</li>
+        <li>Objects are mutuable, even when declared using <code>const</code> (can change value but cannot reassign)</li>
+        <li>Methods: declared as
+          <pre><code>methodName () {
+  ...
+}</code></pre>
+        </li>
+        <li>Objects can be nested, navigate by chaining operators (dot/bracket notation)</li>
+        <li>Objects are passed by reference - changegs made to objects passed into functions as a parameter are permanent</li>
+        <li>Calling object: the object that a method belongs to</li>
+        <li><code>this</code> keyword: refers to calling object, can be used to access properties</li>
+        <li>Methods do not automatically have access to other properties of the calling object, value depends on where <code>this</code> is being accessed from</li>
+        <li>Cannot use arrow functions as method if access to other internal properties is needed</li>
+        <li>Objects do not have built-in privacy, convention is to use underscore <code>_</code> before property name to specify that property is not meant to be directly changed</li>
+        <li>Setters and getters: Allowed for more detailed ways of accessing and assigning properties (after these are declared, access/set the property using the normal syntax)
+          <pre><code>get propertyName() {
+  return this._propertyName;
+}
+set propertyName(value) {
+  this._propertName = value;
+}</code></pre>
+        </li>
+        <li>Factory functions: functions that create/return objects, allow object instances to be created quickly</li>
+        <li>Property value shorthand: If object property and name of variable given to it are the same when using a function, can use property value shorthand
+          <pre><code>const person = (name, age) => {
+  return {
+    name, //instead of name: name, age: age
+    age
+  };
+};</code></pre>
+        </li>
+        <li>Object destructuing: instead of writing, for example, <code>const age = person.age;</code> can write <code>const { age } = person;</code> (can be used with nested properties as well)</li>
+        <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">built-in object methods</a> from Mozilla for more detail</li>
+      </ul>
+    </section>
+    <section class="main-section" id="Classes">
+      <header>Classes</header>
+      <p>Classes are templates for objects</p>
+      <ul>
+        <li>Constructor method: called when a new instance of a class is created (<code>const variable = new Class()</code>)
+          <pre><code>constructor(parameters) {}</code></pre>
+        </li>
+        <li>Inheritance: child class inherits properties and methods of parent class, use <code>extends</code> keyword</li>
+        <li>Super constructor: use <code>super</code> keyword to call constructor of parent class, i.e.
+          <pre><code>constructor(parameters) {
+  super(parameters)
+  ...
+}</code></pre>
+        </li>
+        <li>Static methods: Called on the class rather than class instances (i.e. objects) - defined using <code>static</code> keyword</li>
+      </ul>
     </section>
   </main>
-
 </body>
 </html>
