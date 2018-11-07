@@ -124,6 +124,7 @@ nav ul li a {
 
 .qualification-img {
   max-height: 50px;
+  min-width: 50px;
 }
 
 .qualification-img,
@@ -214,5 +215,10 @@ nav ul li a {
   .welcome-icon {
     margin-left: 5px;
     margin-right: 5px;
+  }
+  .qualification-img,
+  .qualification-icon {
+    margin-left: 7px;
+    margin-right: 7px;
   }
 }
